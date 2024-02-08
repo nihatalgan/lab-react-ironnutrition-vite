@@ -5,7 +5,14 @@ import "./App.css";
 
 function App() {
   const [foods, setProducts] = useState(foodsJson);
-  // console.log(foods[0].name);
+
+  const deleteFood = (foodId) => {
+    const filteredFoods = foods.filter((food) => {
+      return food.id !== foodId;
+    });
+
+    setProducts(filteredFoods);
+  };
 
   return (
     <div className="App">
@@ -21,7 +28,7 @@ function App() {
       /> */}
 
       {foods.map((food) => {
-        return <FoodBox food={food} />;
+        return <FoodBox key={food.id} food={food} deleteFood={deleteFood} />;
       })}
     </div>
   );
