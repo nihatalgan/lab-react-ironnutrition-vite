@@ -14,8 +14,7 @@ function AddFoodForm({ addFood }) {
   const handleServingsInput = (e) => setServings(e.target.value);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // prevents the form from reloading the page
-    // Add the logic to create a new movie and add it to the state variable movies
+    e.preventDefault();
     const id = uuidv4();
     const newFood = {
       id,
@@ -24,9 +23,7 @@ function AddFoodForm({ addFood }) {
       calories,
       servings,
     };
-    console.log("newFood", newFood);
-    addFood(newFood); // updates the foods state variable
-    // this resets the form to its initial state
+    addFood(newFood);
     setName("");
     setImage("");
     setCalories(0);
@@ -35,10 +32,10 @@ function AddFoodForm({ addFood }) {
 
   return (
     <div className="add_food">
-      <h4>Create</h4>
+      <h4>Add Food Entry</h4>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Food Name:</label>
+          <label>Name</label>
           <input
             type="text"
             name="name"
@@ -47,7 +44,7 @@ function AddFoodForm({ addFood }) {
           />
         </div>
         <div>
-          <label>Image link:</label>
+          <label>Image</label>
           <input
             type="text"
             name="image"
@@ -56,7 +53,7 @@ function AddFoodForm({ addFood }) {
           />
         </div>
         <div>
-          <label>Calories:</label>
+          <label>Calories</label>
           <input
             type="number"
             name="calories"
@@ -65,7 +62,7 @@ function AddFoodForm({ addFood }) {
           />
         </div>
         <div>
-          <label>Servings:</label>
+          <label>Servings</label>
           <input
             type="number"
             name="servings"
@@ -74,7 +71,7 @@ function AddFoodForm({ addFood }) {
           />
         </div>
 
-        <button type="submit">Add a Food</button>
+        <button type="submit">Create</button>
       </form>
     </div>
   );
