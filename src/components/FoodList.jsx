@@ -1,7 +1,7 @@
 import { useState } from "react";
 import foodsJson from "../foods.json";
 import FoodBox from "./FoodBox";
-import AddFood from "./AddFoodForm";
+import AddFoodForm from "./AddFoodForm";
 
 function FoodList() {
   const [foods, setProducts] = useState(foodsJson);
@@ -26,7 +26,7 @@ function FoodList() {
   return (
     <div className="App">
       <h1>LAB | React IronNutrition</h1>
-      <AddFood addFood={addNewFood} />
+      <AddFoodForm addFood={addNewFood} />
 
       {/* <FoodBox
           food={{

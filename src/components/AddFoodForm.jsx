@@ -2,7 +2,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 
-function AddFood({ addFood }) {
+function AddFoodForm({ addFood }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [calories, setCalories] = useState(0);
@@ -35,7 +35,7 @@ function AddFood({ addFood }) {
 
   return (
     <div className="add_food">
-      <h4>Add a Food</h4>
+      <h4>Create</h4>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Food Name:</label>
@@ -80,4 +80,4 @@ function AddFood({ addFood }) {
   );
 }
 
-export default AddFood;
+export default AddFoodForm;
