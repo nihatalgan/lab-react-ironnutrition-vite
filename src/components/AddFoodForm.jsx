@@ -1,6 +1,7 @@
 // Your code here
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
+import { Divider, Input, Button } from "antd";
 
 function AddFoodForm({ addFood }) {
   const [name, setName] = useState("");
@@ -32,8 +33,8 @@ function AddFoodForm({ addFood }) {
 
   return (
     <div className="add_food">
-      <h4>Add Food Entry</h4>
       <form onSubmit={handleSubmit}>
+        <Divider>Add Food Entry</Divider>
         <div>
           <label>Name</label>
           <input
